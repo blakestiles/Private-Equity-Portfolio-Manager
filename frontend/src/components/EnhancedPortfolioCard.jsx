@@ -24,28 +24,28 @@ const EnhancedPortfolioCard = ({ company }) => {
                          company.status === 'on-track' ? '#3b82f6' : '#f59e0b';
 
   const MetricItem = ({ icon: Icon, label, value, change, trend }) => (
-    <div className="flex items-center justify-between py-2.5 px-3 rounded-lg bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:scale-[1.02] group">
-      <div className="flex items-center gap-2.5">
-        <div className="p-1.5 rounded-lg bg-slate-700/50 group-hover:scale-110 transition-transform">
-          <Icon className="w-3.5 h-3.5 text-slate-300" />
+    <div className="flex items-center justify-between py-2 sm:py-2.5 px-2 sm:px-3 rounded-lg bg-slate-800/40 backdrop-blur-sm border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 hover:scale-[1.02] group">
+      <div className="flex items-center gap-1.5 sm:gap-2.5 min-w-0 flex-1">
+        <div className="p-1 sm:p-1.5 rounded-lg bg-slate-700/50 group-hover:scale-110 transition-transform flex-shrink-0">
+          <Icon className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-slate-300" />
         </div>
-        <div>
-          <p className="text-[10px] text-slate-400 font-medium uppercase tracking-wider">{label}</p>
-          <p className="text-base font-bold text-white">{value}</p>
+        <div className="min-w-0 flex-1">
+          <p className="text-[9px] sm:text-[10px] text-slate-400 font-medium uppercase tracking-wider truncate">{label}</p>
+          <p className="text-sm sm:text-base font-bold text-white truncate">{value}</p>
         </div>
       </div>
-      <div className={`flex items-center gap-1 px-2 py-0.5 rounded-md ${
+      <div className={`flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 py-0.5 rounded-md flex-shrink-0 ${
         trend === 'up' ? 'bg-emerald-500/10 text-emerald-400' : 
         trend === 'down' ? 'bg-red-500/10 text-red-400' : 'bg-slate-500/10 text-slate-400'
       }`}>
         {trend === 'up' ? (
-          <TrendingUp className="w-3 h-3" />
+          <TrendingUp className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
         ) : trend === 'down' ? (
-          <TrendingDown className="w-3 h-3" />
+          <TrendingDown className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
         ) : (
-          <span className="w-3 h-0.5 bg-slate-400 rounded"></span>
+          <span className="w-2.5 h-0.5 sm:w-3 bg-slate-400 rounded"></span>
         )}
-        <span className="text-xs font-semibold">{Math.abs(change)}%</span>
+        <span className="text-[10px] sm:text-xs font-semibold">{Math.abs(change)}%</span>
       </div>
     </div>
   );
