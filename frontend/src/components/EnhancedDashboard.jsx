@@ -76,35 +76,35 @@ const EnhancedDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-3 sm:p-4 md:p-6">
       {/* Animated background elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-10 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-violet-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute top-20 left-10 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-emerald-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-blue-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 w-[300px] sm:w-[500px] h-[300px] sm:h-[500px] bg-violet-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
       </div>
 
       <div className="max-w-[1800px] mx-auto relative z-10">
         {/* Header */}
-        <div className="mb-6">
-          <div className="flex items-center justify-between mb-6">
-            <div className="flex items-center gap-4">
-              <div className="p-3 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg">
-                <Briefcase className="w-8 h-8 text-white" />
+        <div className="mb-4 sm:mb-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-4 sm:mb-6">
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="p-2 sm:p-3 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 shadow-lg">
+                <Briefcase className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold text-white mb-1">Portfolio Dashboard</h1>
-                <p className="text-slate-400">Real-time performance monitoring & analytics</p>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">Portfolio Dashboard</h1>
+                <p className="text-xs sm:text-sm text-slate-400">Real-time performance monitoring & analytics</p>
               </div>
             </div>
             
             {/* Time Period Selector */}
-            <div className="flex items-center gap-2 bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-lg p-1">
+            <div className="flex items-center gap-1 sm:gap-2 bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-lg p-1 w-full sm:w-auto">
               {['YTD', '1Y', '3Y', 'All'].map((period) => (
                 <button
                   key={period}
                   onClick={() => setTimePeriod(period)}
-                  className={`px-4 py-2 rounded-md text-sm font-semibold transition-all duration-300 ${
+                  className={`flex-1 sm:flex-none px-3 sm:px-4 py-1.5 sm:py-2 rounded-md text-xs sm:text-sm font-semibold transition-all duration-300 ${
                     timePeriod === period
                       ? 'bg-gradient-to-r from-emerald-500 to-teal-600 text-white shadow-lg'
                       : 'text-slate-400 hover:text-white hover:bg-slate-800/50'
