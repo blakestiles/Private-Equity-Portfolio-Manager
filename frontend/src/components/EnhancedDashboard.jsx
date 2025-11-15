@@ -118,7 +118,7 @@ const EnhancedDashboard = () => {
         </div>
 
         {/* Summary Cards */}
-        <div className="grid grid-cols-4 gap-5 mb-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mb-4 sm:mb-6">
           <SummaryCard
             icon={DollarSign}
             label="Total Portfolio Value"
@@ -153,7 +153,7 @@ const EnhancedDashboard = () => {
         </div>
 
         {/* Quick Stats Row */}
-        <div className="grid grid-cols-6 gap-4 mb-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-6">
           <QuickStat label="Active Deals" value={portfolioSummary.activeDeals} icon={BarChart3} />
           <QuickStat label="Total Team" value={portfolioSummary.totalTeamSize} icon={Users} />
           <QuickStat label="Avg Growth" value="26.3%" change={4.2} icon={LineChart} />
