@@ -83,27 +83,27 @@ const EnhancedPortfolioCard = ({ company }) => {
           </div>
 
           {/* Investment Details */}
-          <div className="grid grid-cols-2 gap-3 mb-4 p-3 bg-slate-800/30 rounded-lg border border-slate-700/30">
+          <div className="grid grid-cols-2 gap-2 sm:gap-3 mb-3 sm:mb-4 p-2 sm:p-3 bg-slate-800/30 rounded-lg border border-slate-700/30">
             <div>
-              <p className="text-[10px] text-slate-400 uppercase tracking-wider mb-1">Invested</p>
-              <p className="text-sm font-bold text-white">{company.investmentAmount}</p>
+              <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-wider mb-1">Invested</p>
+              <p className="text-xs sm:text-sm font-bold text-white truncate">{company.investmentAmount}</p>
             </div>
             <div>
-              <p className="text-[10px] text-slate-400 uppercase tracking-wider mb-1">Current Value</p>
-              <p className="text-sm font-bold text-emerald-400">{company.currentValue}</p>
+              <p className="text-[9px] sm:text-[10px] text-slate-400 uppercase tracking-wider mb-1">Current Value</p>
+              <p className="text-xs sm:text-sm font-bold text-emerald-400 truncate">{company.currentValue}</p>
             </div>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-3 h-3 text-slate-400" />
-              <div>
-                <p className="text-[10px] text-slate-400">Acquired</p>
-                <p className="text-xs font-semibold text-white">{company.acquisitionDate}</p>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Calendar className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400 flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <p className="text-[9px] sm:text-[10px] text-slate-400">Acquired</p>
+                <p className="text-[10px] sm:text-xs font-semibold text-white truncate">{company.acquisitionDate}</p>
               </div>
             </div>
-            <div className="flex items-center gap-2">
-              <Clock className="w-3 h-3 text-slate-400" />
-              <div>
-                <p className="text-[10px] text-slate-400">Holding</p>
-                <p className="text-xs font-semibold text-white">{company.holdingPeriod}</p>
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-slate-400 flex-shrink-0" />
+              <div className="min-w-0 flex-1">
+                <p className="text-[9px] sm:text-[10px] text-slate-400">Holding</p>
+                <p className="text-[10px] sm:text-xs font-semibold text-white truncate">{company.holdingPeriod}</p>
               </div>
             </div>
           </div>
