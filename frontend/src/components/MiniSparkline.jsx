@@ -14,7 +14,7 @@ const MiniSparkline = ({ data, color, height = 40, width = 120 }) => {
   }).join(' ');
 
   return (
-    <svg width={width} height={height} className="opacity-80">
+    <svg width="100%" height={height} viewBox={`0 0 ${width} ${height}`} preserveAspectRatio="none" className="opacity-80">
       <defs>
         <linearGradient id={`gradient-${color}`} x1="0%" y1="0%" x2="0%" y2="100%">
           <stop offset="0%" stopColor={color} stopOpacity="0.5" />
@@ -28,6 +28,7 @@ const MiniSparkline = ({ data, color, height = 40, width = 120 }) => {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        vectorEffect="non-scaling-stroke"
       />
       <polyline
         points={`0,${height} ${points} ${width},${height}`}
