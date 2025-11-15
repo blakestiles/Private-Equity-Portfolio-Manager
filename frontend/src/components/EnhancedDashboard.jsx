@@ -228,15 +228,15 @@ const EnhancedDashboard = () => {
         </div>
 
         {/* Footer */}
-        <div className="mt-8 text-center">
-          <p className="text-sm text-slate-500">
+        <div className="mt-6 sm:mt-8 text-center">
+          <p className="text-xs sm:text-sm text-slate-500">
             Last updated: {new Date().toLocaleString('en-US', { 
-              month: 'long', 
+              month: 'short', 
               day: 'numeric', 
               year: 'numeric', 
               hour: '2-digit', 
               minute: '2-digit' 
-            })} • Showing {timePeriod} performance
+            })} • {timePeriod} performance
           </p>
         </div>
       </div>
