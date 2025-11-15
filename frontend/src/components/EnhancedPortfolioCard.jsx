@@ -67,17 +67,17 @@ const EnhancedPortfolioCard = ({ company }) => {
         
         <div className="p-3 sm:p-4 md:p-5">
           {/* Header */}
-          <div className="flex items-start justify-between mb-4">
-            <div className="flex items-center gap-3">
-              <div className={`p-3 rounded-xl bg-gradient-to-br ${company.color} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-                <Building2 className="w-5 h-5 text-white" />
+          <div className="flex items-start justify-between mb-3 sm:mb-4 gap-2">
+            <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+              <div className={`p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${company.color} shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+                <Building2 className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </div>
-              <div>
-                <h3 className="text-lg font-bold text-white mb-0.5">{company.name}</h3>
-                <p className="text-xs text-slate-400">{company.industry}</p>
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm sm:text-base md:text-lg font-bold text-white mb-0.5 truncate">{company.name}</h3>
+                <p className="text-[10px] sm:text-xs text-slate-400 truncate">{company.industry}</p>
               </div>
             </div>
-            <Badge className={`${statusConfig[company.status].color} border px-2.5 py-0.5 text-xs`}>
+            <Badge className={`${statusConfig[company.status].color} border px-1.5 sm:px-2.5 py-0.5 text-[10px] sm:text-xs whitespace-nowrap flex-shrink-0`}>
               {statusConfig[company.status].label}
             </Badge>
           </div>
