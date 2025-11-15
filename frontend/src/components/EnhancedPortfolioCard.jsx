@@ -58,14 +58,14 @@ const EnhancedPortfolioCard = ({ company }) => {
       {/* Enhanced glow effect */}
       <div className={`absolute -inset-1 bg-gradient-to-r ${company.color} rounded-2xl opacity-0 group-hover:opacity-40 blur-2xl transition-all duration-700`}></div>
       
-      <Card className="relative bg-gradient-to-br from-slate-900/90 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] h-full">
+      <Card className="relative bg-gradient-to-br from-slate-900/90 to-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 hover:scale-[1.02] h-full">
         {/* Animated top gradient accent */}
-        <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${company.color} group-hover:h-2 transition-all duration-300`}></div>
+        <div className={`absolute top-0 left-0 right-0 h-1 sm:h-1.5 bg-gradient-to-r ${company.color} group-hover:h-1.5 sm:group-hover:h-2 transition-all duration-300`}></div>
         
         {/* Decorative corner element */}
-        <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${company.color} opacity-5 blur-3xl`}></div>
+        <div className={`absolute top-0 right-0 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br ${company.color} opacity-5 blur-3xl`}></div>
         
-        <div className="p-5">
+        <div className="p-3 sm:p-4 md:p-5">
           {/* Header */}
           <div className="flex items-start justify-between mb-4">
             <div className="flex items-center gap-3">
