@@ -109,16 +109,18 @@ const EnhancedPortfolioCard = ({ company }) => {
           </div>
 
           {/* Performance Chart */}
-          <div className="mb-4 p-3 bg-slate-800/30 rounded-lg border border-slate-700/30">
+          <div className="mb-3 sm:mb-4 p-2 sm:p-3 bg-slate-800/30 rounded-lg border border-slate-700/30">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs text-slate-400 font-medium">Revenue Trend (12M)</span>
-              <span className={`text-xs font-bold ${
+              <span className="text-[10px] sm:text-xs text-slate-400 font-medium">Revenue Trend (12M)</span>
+              <span className={`text-[10px] sm:text-xs font-bold ${
                 company.metrics.revenue.trend === 'up' ? 'text-emerald-400' : 'text-red-400'
               }`}>
                 {company.metrics.revenue.trend === 'up' ? '+' : ''}{company.metrics.revenue.change}%
               </span>
             </div>
-            <MiniSparkline data={company.sparklineData} color={sparklineColor} width={260} height={50} />
+            <div className="w-full overflow-hidden">
+              <MiniSparkline data={company.sparklineData} color={sparklineColor} width={240} height={40} />
+            </div>
           </div>
 
           {/* Core Metrics Grid */}
