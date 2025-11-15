@@ -200,12 +200,12 @@ const EnhancedPortfolioCard = ({ company }) => {
           )}
 
           {/* Footer with Valuation and Expand Button */}
-          <div className="pt-3 border-t border-slate-700/50">
+          <div className="pt-2 sm:pt-3 border-t border-slate-700/50">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-xs text-slate-400">Valuation Multiple</span>
-              <div className="flex items-center gap-2">
-                <span className="text-xl font-bold text-white">{company.metrics.valuation.value}</span>
-                <span className={`text-xs font-semibold ${
+              <span className="text-[10px] sm:text-xs text-slate-400">Valuation Multiple</span>
+              <div className="flex items-center gap-1.5 sm:gap-2">
+                <span className="text-lg sm:text-xl font-bold text-white">{company.metrics.valuation.value}</span>
+                <span className={`text-[10px] sm:text-xs font-semibold ${
                   company.metrics.valuation.trend === 'up' ? 'text-emerald-400' : 'text-red-400'
                 }`}>
                   {company.metrics.valuation.trend === 'up' ? '+' : ''}{company.metrics.valuation.change}x
@@ -215,15 +215,15 @@ const EnhancedPortfolioCard = ({ company }) => {
             
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 group/btn"
+              className="w-full flex items-center justify-center gap-1.5 sm:gap-2 py-1.5 sm:py-2 px-2 sm:px-3 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 border border-slate-700/50 hover:border-slate-600/50 transition-all duration-300 group/btn"
             >
-              <span className="text-xs font-medium text-slate-300 group-hover/btn:text-white transition-colors">
-                {isExpanded ? 'Show Less' : 'Show More Details'}
+              <span className="text-[10px] sm:text-xs font-medium text-slate-300 group-hover/btn:text-white transition-colors">
+                {isExpanded ? 'Show Less' : 'More Details'}
               </span>
               {isExpanded ? (
-                <ChevronUp className="w-4 h-4 text-slate-400 group-hover/btn:text-white transition-colors" />
+                <ChevronUp className="w-3 h-3 sm:w-4 sm:h-4 text-slate-400 group-hover/btn:text-white transition-colors" />
               ) : (
-                <ChevronDown className="w-4 h-4 text-slate-400 group-hover/btn:text-white transition-colors" />
+                <ChevronDown className="w-3 h-3 sm:w-4 sm:h-4 text-slate-400 group-hover/btn:text-white transition-colors" />
               )}
             </button>
           </div>
