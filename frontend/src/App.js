@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import PortfolioDashboard from './components/PortfolioDashboard';
+import EnhancedDashboard from './components/EnhancedDashboard';
 import { Toaster } from './components/ui/toaster';
 
 function App() {
   return (
     <div className="App">
-      <PortfolioDashboard />
+      <EnhancedDashboard />
       <Toaster />
     </div>
   );
