@@ -41,20 +41,20 @@ const EnhancedDashboard = () => {
   );
 
   const QuickStat = ({ label, value, change, icon: Icon }) => (
-    <div className="flex items-center justify-between p-3 bg-slate-800/40 rounded-lg border border-slate-700/50">
-      <div className="flex items-center gap-3">
-        <div className="p-2 rounded-lg bg-slate-700/50">
-          <Icon className="w-4 h-4 text-slate-300" />
+    <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-2 sm:p-3 bg-slate-800/40 rounded-lg border border-slate-700/50 gap-2 sm:gap-0">
+      <div className="flex items-center gap-2 sm:gap-3 w-full sm:w-auto">
+        <div className="p-1.5 sm:p-2 rounded-lg bg-slate-700/50 flex-shrink-0">
+          <Icon className="w-3 h-3 sm:w-4 sm:h-4 text-slate-300" />
         </div>
-        <div>
-          <p className="text-xs text-slate-400">{label}</p>
-          <p className="text-lg font-bold text-white">{value}</p>
+        <div className="flex-1 sm:flex-none min-w-0">
+          <p className="text-[10px] sm:text-xs text-slate-400 truncate">{label}</p>
+          <p className="text-sm sm:text-lg font-bold text-white">{value}</p>
         </div>
       </div>
       {change && (
-        <span className={`text-xs font-semibold ${
+        <span className={`text-[10px] sm:text-xs font-semibold ${
           change > 0 ? 'text-emerald-400' : 'text-red-400'
-        }`}>
+        } self-end sm:self-auto`}>
           {change > 0 ? '+' : ''}{change}%
         </span>
       )}
