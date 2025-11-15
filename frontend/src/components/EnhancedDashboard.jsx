@@ -13,27 +13,27 @@ const EnhancedDashboard = () => {
   const [timePeriod, setTimePeriod] = useState('YTD');
 
   const SummaryCard = ({ icon: Icon, label, value, gradient, subtitle, trend }) => (
-    <Card className="relative bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-xl p-5 hover:scale-[1.02] transition-all duration-300 overflow-hidden group cursor-pointer">
+    <Card className="relative bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-xl p-3 sm:p-4 md:p-5 hover:scale-[1.02] transition-all duration-300 overflow-hidden group cursor-pointer">
       <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-5 group-hover:opacity-10 transition-opacity duration-300`}></div>
-      <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${gradient} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity duration-500`}></div>
+      <div className={`absolute top-0 right-0 w-20 h-20 sm:w-32 sm:h-32 bg-gradient-to-br ${gradient} opacity-10 blur-3xl group-hover:opacity-20 transition-opacity duration-500`}></div>
       
       <div className="relative flex items-start justify-between">
-        <div className="flex items-start gap-4">
-          <div className={`p-3 rounded-xl bg-gradient-to-br ${gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-            <Icon className="w-6 h-6 text-white" />
+        <div className="flex items-start gap-2 sm:gap-3 md:gap-4 flex-1 min-w-0">
+          <div className={`p-2 sm:p-2.5 md:p-3 rounded-lg sm:rounded-xl bg-gradient-to-br ${gradient} shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0`}>
+            <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 text-white" />
           </div>
-          <div>
-            <p className="text-xs text-slate-400 mb-1 uppercase tracking-wider font-medium">{label}</p>
-            <p className="text-3xl font-bold text-white mb-1">{value}</p>
+          <div className="flex-1 min-w-0">
+            <p className="text-[10px] sm:text-xs text-slate-400 mb-0.5 sm:mb-1 uppercase tracking-wider font-medium truncate">{label}</p>
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-0.5 sm:mb-1 truncate">{value}</p>
             {subtitle && (
-              <p className="text-xs text-slate-500">{subtitle}</p>
+              <p className="text-[10px] sm:text-xs text-slate-500 hidden sm:block">{subtitle}</p>
             )}
           </div>
         </div>
         {trend && (
-          <div className="flex items-center gap-1 px-2 py-1 rounded-lg bg-emerald-500/10 text-emerald-400">
-            <ArrowUpRight className="w-3 h-3" />
-            <span className="text-xs font-bold">{trend}</span>
+          <div className="flex items-center gap-0.5 sm:gap-1 px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md sm:rounded-lg bg-emerald-500/10 text-emerald-400 flex-shrink-0">
+            <ArrowUpRight className="w-2.5 h-2.5 sm:w-3 sm:h-3" />
+            <span className="text-[10px] sm:text-xs font-bold">{trend}</span>
           </div>
         )}
       </div>
