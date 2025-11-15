@@ -163,42 +163,42 @@ const EnhancedDashboard = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-4 gap-6">
-          {/* Left Column - Portfolio Companies (spans 3 columns) */}
-          <div className="col-span-3">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 sm:gap-6">
+          {/* Left Column - Portfolio Companies (spans 3 columns on desktop) */}
+          <div className="lg:col-span-3">
             {/* Search and Filters */}
-            <div className="mb-6">
-              <Card className="bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-xl p-4">
-                <div className="flex items-center gap-4">
+            <div className="mb-4 sm:mb-6">
+              <Card className="bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-xl p-3 sm:p-4">
+                <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4">
                   {/* Search */}
                   <div className="flex-1 relative">
                     <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
                     <Input
                       type="text"
-                      placeholder="Search companies or industries..."
+                      placeholder="Search companies..."
                       value={searchQuery}
                       onChange={(e) => setSearchQuery(e.target.value)}
-                      className="pl-10 bg-slate-800/50 border-slate-700/50 text-white placeholder:text-slate-500 focus:border-emerald-500/50"
+                      className="pl-10 bg-slate-800/50 border-slate-700/50 text-white placeholder:text-slate-500 focus:border-emerald-500/50 text-sm"
                     />
                   </div>
 
                   {/* Status Filter */}
-                  <div className="flex items-center gap-2">
-                    <Filter className="w-4 h-4 text-slate-400" />
-                    <div className="flex gap-2">
+                  <div className="flex items-center gap-2 overflow-x-auto pb-2 sm:pb-0">
+                    <Filter className="w-4 h-4 text-slate-400 flex-shrink-0" />
+                    <div className="flex gap-2 flex-nowrap sm:flex-wrap">
                       {Object.entries(statusCounts).map(([status, count]) => (
                         <Badge
                           key={status}
                           onClick={() => setStatusFilter(status)}
-                          className={`cursor-pointer transition-all duration-300 ${
+                          className={`cursor-pointer transition-all duration-300 text-xs whitespace-nowrap ${
                             statusFilter === status
                               ? 'bg-emerald-500/20 text-emerald-400 border-emerald-500/50'
                               : 'bg-slate-800/50 text-slate-400 border-slate-700/50 hover:bg-slate-700/50'
                           }`}
                         >
                           {status === 'all' ? 'All' : 
-                           status === 'outperforming' ? 'Outperforming' :
-                           status === 'on-track' ? 'On Track' : 'Attention'} ({count})
+                           status === 'outperforming' ? 'Top' :
+                           status === 'on-track' ? 'Track' : 'Watch'} ({count})
                         </Badge>
                       ))}
                     </div>
@@ -209,20 +209,20 @@ const EnhancedDashboard = () => {
 
             {/* Portfolio Companies Grid */}
             {filteredCompanies.length > 0 ? (
-              <div className="grid grid-cols-2 gap-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 md:gap-5">
                 {filteredCompanies.map((company) => (
                   <EnhancedPortfolioCard key={company.id} company={company} />
                 ))}
               </div>
             ) : (
-              <Card className="bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-xl p-12 text-center">
-                <p className="text-slate-400">No companies found matching your criteria</p>
+              <Card className="bg-slate-900/60 backdrop-blur-xl border border-slate-700/50 rounded-xl p-8 sm:p-12 text-center">
+                <p className="text-slate-400 text-sm sm:text-base">No companies found matching your criteria</p>
               </Card>
             )}
           </div>
 
-          {/* Right Column - Activity Feed */}
-          <div className="col-span-1">
+          {/* Right Column - Activity Feed (hidden on mobile by default, can be toggled) */}
+          <div className="lg:col-span-1 lg:block">
             <ActivityFeed />
           </div>
         </div>
